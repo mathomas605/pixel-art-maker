@@ -5,7 +5,8 @@ const GRID_SIZE = 45;
 const PIXLE_SIZE = 25;
 grid.style.width = `${GRID_SIZE * (PIXLE_SIZE + 2)}px`;
 let selectedcolor = "white";
-
+let displayCurColor = document.createElement("div");
+displayCurColor.setAttribute("id", "brush");
 //==================================================
 //create grid
 
@@ -91,6 +92,8 @@ for (let i = 0; i < colors.length; i++) {
   color.style.background = colors[i];
   color.addEventListener("click", () => {
     selectedcolor = colors[i];
+    displayCurColor.style.background = selectedcolor;
   });
   palette.append(color);
+  palette.append(displayCurColor);
 }

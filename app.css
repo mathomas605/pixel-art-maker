@@ -11,12 +11,26 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  border: 3px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .palette {
   background-color: PaleGoldenrod;
+  padding: 3px solid black;
   width: 990px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+#brush {
+  height: 55px;
+  width: 110px;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin-left: 55px;
 }
