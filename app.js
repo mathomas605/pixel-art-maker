@@ -7,6 +7,7 @@ grid.style.width = `${GRID_SIZE * (PIXLE_SIZE + 2)}px`;
 let selectedcolor = "white";
 let displayCurColor = document.createElement("div");
 displayCurColor.setAttribute("id", "brush");
+let mouseIsDown = false;
 //==================================================
 //create grid
 
@@ -19,7 +20,7 @@ for (let i = 0; i < GRID_SIZE ** 2; i++) {
   /*pixel.addEventListener("click", function () {
     pixel.style.background = selectedcolor;
   });*/
-  var mouseIsDown = false;
+
   pixel.addEventListener("mousedown", function () {
     mouseIsDown = true;
     pixel.style.backgound = selectedcolor;
@@ -97,3 +98,14 @@ for (let i = 0; i < colors.length; i++) {
   palette.append(color);
   palette.append(displayCurColor);
 }
+//======================================================
+// clear button
+let clearButton = document.createElement("button");
+clearButton.innerText = "clear";
+palette.append(clearButton);
+clearButton.addEventListener("click", function () {
+  const pixels = document.querySelectorAll(".grid div");
+  pixels.forEach(function (pixel) {
+    pixel.style.background = "white";
+  });
+});
